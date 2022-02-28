@@ -1,0 +1,80 @@
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p{
+  line-height: 200%;
+  font-size: 30px;
+  position: relative;
+  transition: 1s;
+  overflow: hidden;
+}
+p:nth-child(1):before,
+p:nth-child(2):before,
+p:nth-child(3):before
+{
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 100%;
+  background-color: crimson;
+  transition: 1s;
+}
+p:nth-child(1)::before{
+  left: -100%;
+}
+p:nth-child(2)::before{
+  left: 100%;
+}
+p:nth-child(3)::before{
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  left: 0;
+}
+p:nth-child(4)::before,
+p:nth-child(5)::before,
+p:nth-child(4)::after,
+p:nth-child(5)::after{
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  background-color: crimson;
+  transition: 1s;
+}
+p:nth-child(4)::before,
+p:nth-child(5)::before{
+  right: 50%;
+}
+p:nth-child(4)::after,
+p:nth-child(5)::after{
+  left: 50%;
+}
+p:nth-child(4)::before,
+p:nth-child(4)::after{
+  width: 0;
+}
+p:nth-child(4):hover::before,
+p:nth-child(4):hover::after{
+  width: 100%;
+}
+p:nth-child(5)::before,
+p:nth-child(5)::after{
+  width: 100%;
+}
+p:nth-child(5):hover::before,
+p:nth-child(5):hover::after{
+  width: 0;
+}
+p:nth-child(1):hover::before,
+p:nth-child(2):hover::before
+{
+  left: 0;
+}
+p:nth-child(3):hover::before{
+  left: 100%;
+}
